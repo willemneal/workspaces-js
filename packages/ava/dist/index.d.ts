@@ -18,13 +18,13 @@ export declare interface Workspace extends RawWorkspace {
      * In testnet mode, the same functionality is achieved via different means,
      * since all actions must occur on one blockchain instead of N blockchains.
      *
-     * `workspace.test` is added to `near-workspaces` by `near-workspaces-ava`, and is
+     * `workspace.test` is added to `near-workspaces` by `near-workspaces-willem-ava`, and is
      * shorthand for:
      *
      *     import avaTest from 'ava';
      *     import {Workspace} from 'near-workspaces';
-     *     // Alternatively, you can import Workspace and ava both from near-workspaces-ava:
-     *     // import {ava as avaTest, Workspace} from 'near-workspaces-ava';
+     *     // Alternatively, you can import Workspace and ava both from near-workspaces-willem-ava:
+     *     // import {ava as avaTest, Workspace} from 'near-workspaces-willem-ava';
      *
      *     const workspace = Workspace.init(...);
      *

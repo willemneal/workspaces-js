@@ -2,7 +2,7 @@
   "name": "near-workspaces-monorepo",
   "version": "0.0.0",
   "description": "Write tests in TypeScript/JavaScript to run in a controlled NEAR Sandbox local environment.",
-  "repository": "https://github.com/near/workspaces-js",
+  "repository": "https://github.com/willemneal/workspaces-js",
   "author": "Near Inc (team@near.org)",
   "license": "(MIT AND Apache-2.0)",
   "scripts": {

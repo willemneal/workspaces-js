@@ -1,7 +1,7 @@
 {
   "name": "near-workspaces-init",
   "version": "1.0.0",
-  "description": "Quickly bootstrap a project with near-workspaces-ava",
+  "description": "Quickly bootstrap a project with near-workspaces-willem-ava",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/near/workspaces-js.git",
@@ -26,5 +26,6 @@
   "engines": {
     "node": ">= 14.0.0",
     "npm": ">= 6.0.0"
-  }
+  },
+  "private": true
 }
