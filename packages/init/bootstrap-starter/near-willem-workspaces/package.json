@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "near-willem-workspaces-ava",
+    "test:testnet": "near-willem-workspaces-ava --config ./ava.testnet.config.cjs"
+  },
+  "devDependencies": {
+    "near-willem-workspaces-ava": "filled in by `near-willem-workspaces-init`"
+  }
+}

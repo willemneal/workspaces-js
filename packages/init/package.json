@@ -1,7 +1,7 @@
 {
-  "name": "near-workspaces-init",
+  "name": "near-willem-workspaces-init",
   "version": "1.0.0",
-  "description": "Quickly bootstrap a project with near-workspaces-ava",
+  "description": "Quickly bootstrap a project with near-willem-workspaces-willem-ava",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/near/workspaces-js.git",
@@ -11,7 +11,7 @@
   "license": "(MIT AND Apache-2.0)",
   "main": "scripts/cli.js",
   "bin": {
-    "near-workspaces-init": "scripts/cli.js"
+    "near-willem-workspaces-init": "scripts/cli.js"
   },
   "files": [
     "scripts/cli.js",
@@ -26,5 +26,6 @@
   "engines": {
     "node": ">= 14.0.0",
     "npm": ">= 6.0.0"
-  }
+  },
+  "private": true
 }

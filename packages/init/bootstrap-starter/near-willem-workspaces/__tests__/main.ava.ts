@@ -1,5 +1,5 @@
 /**
- * Welcome to near-workspaces-ava!
+ * Welcome to near-willem-workspaces-ava!
  *
  * This is a working test which checks the functionality of [the status-message
  * contract][1]. For quick reference, here's the contract's implementation:
@@ -27,9 +27,9 @@
  */
 
 /**
- * Start off by importing Workspace from near-workspaces-ava.
+ * Start off by importing Workspace from near-willem-workspaces-ava.
  */
-import {Workspace} from 'near-workspaces-ava';
+import {Workspace} from 'near-willem-workspaces-ava';
 
 /**
  * Initialize a new workspace. In local sandbox mode, this will:
@@ -80,12 +80,12 @@ const workspace = Workspace.init(async ({root}) => {
  *   - shut down at the end, forgetting all new data created
  *
  * It's also worth knowing that `workspace.test` is syntax sugar added by
- * near-workspaces-ava. With raw AVA + near-workspaces, here's how to write a test:
+ * near-willem-workspaces-ava. With raw AVA + near-willem-workspaces, here's how to write a test:
  *
  *     import avaTest from 'ava';
- *     import {Workspace} from 'near-workspaces';
- *     // Alternatively, you can import Workspace and ava both from near-workspaces-ava:
- *     // import {ava as avaTest, Workspace} from 'near-workspaces-ava';
+ *     import {Workspace} from 'near-willem-workspaces';
+ *     // Alternatively, you can import Workspace and ava both from near-willem-workspaces-ava:
+ *     // import {ava as avaTest, Workspace} from 'near-willem-workspaces-ava';
  *
  *     const workspace = Workspace.init(...);
  *
@@ -144,7 +144,7 @@ workspace.test('extra goodies', async (test, {alice, contract, root}) => {
   });
 
   /**
-   * The Account class from near-workspaces overrides `toJSON` so that removing
+   * The Account class from near-willem-workspaces overrides `toJSON` so that removing
    * `.accountId` from the lines above gives the same behavior.
    * (This explains something about the example `contract.view` calls above:
    * you may have noticed that they use things like `{account_id: root}`

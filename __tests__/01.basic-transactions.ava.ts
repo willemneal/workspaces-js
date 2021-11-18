@@ -1,5 +1,5 @@
 /**
- * This test demonstrates basic behavior of near-workspaces, making simple
+ * This test demonstrates basic behavior of near-willem-workspaces, making simple
  * function calls and view calls to the contract from
  * https://github.com/near-examples/rust-status-message
  *
@@ -7,7 +7,7 @@
  * on testnet by using the `test:sandbox` and `test:testnet` scripts in
  * package.json.
  */
-import {Workspace} from 'near-workspaces-ava';
+import {Workspace} from 'near-willem-workspaces-ava';
 
 const workspace = Workspace.init(async ({root}) => ({
   contract: await root.createAndDeploy(

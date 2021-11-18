@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const HELP = `Run near-workspaces-ava tests. Examples:
+const HELP = `Run near-willem-workspaces-ava tests. Examples:
 
-    near-workspaces-ava             # Run tests using 'ava'
-    near-workspaces-ava --verbose   # All other flags get passed to the 'ava' CLI
-    near-workspaces-ava -h, --help  # Print this (for AVA's help, use 'ava --help')`;
+    near-willem-workspaces-ava             # Run tests using 'ava'
+    near-willem-workspaces-ava --verbose   # All other flags get passed to the 'ava' CLI
+    near-willem-workspaces-ava -h, --help  # Print this (for AVA's help, use 'ava --help')`;
 
 if (process.argv.includes('-h') || process.argv.includes('--help')) {
   console.log(HELP);
