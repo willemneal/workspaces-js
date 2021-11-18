@@ -5,7 +5,7 @@ import * as fs from 'fs/promises';
 import {mkdirSync, pathExists, removeSync} from 'fs-extra';
 import test from 'ava';
 
-export const TEST_PROJECT = join(process.cwd(), 'test-near-workspaces-init');
+export const TEST_PROJECT = join(process.cwd(), 'test-near-willem-workspaces-init');
 
 test.before(async () => {
   if (await pathExists(TEST_PROJECT)) {
@@ -20,12 +20,12 @@ test.before(async () => {
 });
 
 for (const file of [
-  'near-workspaces/.gitignore',
-  'near-workspaces/README.md',
-  'near-workspaces/__tests__/main.ava.ts',
-  'near-workspaces/ava.config.cjs',
-  'near-workspaces/package.json',
-  'near-workspaces/tsconfig.json',
+  'near-willem-workspaces/.gitignore',
+  'near-willem-workspaces/README.md',
+  'near-willem-workspaces/__tests__/main.ava.ts',
+  'near-willem-workspaces/ava.config.cjs',
+  'near-willem-workspaces/package.json',
+  'near-willem-workspaces/tsconfig.json',
   'test.bat',
   'test.sh',
 ]) {
@@ -35,18 +35,18 @@ for (const file of [
 }
 
 test('using --no-install skips installing node_modules', async t => {
-  t.assert(!await pathExists(`${TEST_PROJECT}/near-workspaces/node_modules`));
+  t.assert(!await pathExists(`${TEST_PROJECT}/near-willem-workspaces/node_modules`));
 });
 
-test('package.json includes correct version of near-workspaces-ava', t => {
+test('package.json includes correct version of near-willem-workspaces-ava', t => {
   const {version} = require(join(__dirname, '../package.json')); // eslint-disable-line @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports
-  const packageJson = require(join(TEST_PROJECT, 'near-workspaces/package.json')); // eslint-disable-line @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports
-  t.is(packageJson.devDependencies!['near-workspaces-ava'], version); // eslint-disable-line @typescript-eslint/no-unsafe-member-access
+  const packageJson = require(join(TEST_PROJECT, 'near-willem-workspaces/package.json')); // eslint-disable-line @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports
+  t.is(packageJson.devDependencies!['near-willem-workspaces-ava'], version); // eslint-disable-line @typescript-eslint/no-unsafe-member-access
 });
 
 test('package.json is well-formatted with line breaks', async t => {
   t.regex(
-    (await fs.readFile(join(TEST_PROJECT, 'near-workspaces/package.json'))).toString(),
+    (await fs.readFile(join(TEST_PROJECT, 'near-willem-workspaces/package.json'))).toString(),
     /{\n/,
     'expected first line of file to only contain an opening bracket',
   );
@@ -57,7 +57,7 @@ test('tests pass in new project since it is nested in monorepo and has access to
     'test',
     '--verbose',
   ], {
-    cwd: join(TEST_PROJECT, 'near-workspaces'),
+    cwd: join(TEST_PROJECT, 'near-willem-workspaces'),
   });
 
   const {status} = testRun;

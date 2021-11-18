@@ -1,5 +1,5 @@
 {
-  "name": "near-workspaces-monorepo",
+  "name": "near-willem-workspaces-monorepo",
   "version": "0.0.0",
   "description": "Write tests in TypeScript/JavaScript to run in a controlled NEAR Sandbox local environment.",
   "repository": "https://github.com/willemneal/workspaces-js",

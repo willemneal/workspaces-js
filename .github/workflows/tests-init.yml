@@ -1,4 +1,4 @@
-name: near-workspaces-init
+name: near-willem-workspaces-init
 on: push
 jobs:
   test:

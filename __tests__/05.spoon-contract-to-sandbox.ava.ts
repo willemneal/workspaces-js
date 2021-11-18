@@ -18,7 +18,7 @@
  * contracts can give you a huge confidence boost that your contracts will work
  * as expected once actually deployed.
  */
-import {Gas, NEAR, NearAccount, Workspace, captureError} from 'near-workspaces-ava';
+import {Gas, NEAR, NearAccount, Workspace, captureError} from 'near-willem-workspaces-ava';
 
 const REF_FINANCE_ACCOUNT = 'v2.ref-finance.near';
 

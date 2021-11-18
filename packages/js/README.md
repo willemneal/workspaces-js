@@ -1,4 +1,4 @@
-near-workspaces for TypeScript/JavaScript
+near-willem-workspaces for TypeScript/JavaScript
 =========================================
 
 Controlled, concurrent workspaces in local [NEAR Sandbox](https://github.com/near/sandbox) blockchains or on [NEAR TestNet](https://docs.near.org/docs/concepts/networks). Fun, deterministic testing and powerful scripting for NEAR.
@@ -7,22 +7,22 @@ Controlled, concurrent workspaces in local [NEAR Sandbox](https://github.com/nea
 Quick Start with AVA
 ====================
 
-[near-workspaces-ava](../ava) is a thin wrapper around near-workspaces-js designed to get you up and running as quickly as possible, with minimal configuration and power-boosts like [TypeScript](https://www.typescriptlang.org/). You can install it with one command. You will need [NodeJS](https://nodejs.dev/) installed. Then:
+[near-willem-workspaces-ava](../ava) is a thin wrapper around near-willem-workspaces-js designed to get you up and running as quickly as possible, with minimal configuration and power-boosts like [TypeScript](https://www.typescriptlang.org/). You can install it with one command. You will need [NodeJS](https://nodejs.dev/) installed. Then:
 
-    npx near-workspaces-init
+    npx near-willem-workspaces-init
 
 This command will:
 
-* Add a `near-workspaces` directory to the folder where you ran the command. This directory contains all the configuration needed to get you started with near-workspaces-ava, and a `__tests__` subfolder with a well-commented example test file.
-* Create `test.sh` and `test.bat` scripts in the folder where you ran the command. These can be used to quickly run the tests in `near-workspaces`. Feel free to integrate test-running into your project in a way that makes more sense for you, and then remove these scripts.
-* Install NPM dependencies using `npm install`. Most of the output you see when running the command comes from this step. You can skip this: `npx near-workspaces-init --no-install`.
+* Add a `near-willem-workspaces` directory to the folder where you ran the command. This directory contains all the configuration needed to get you started with near-willem-workspaces-ava, and a `__tests__` subfolder with a well-commented example test file.
+* Create `test.sh` and `test.bat` scripts in the folder where you ran the command. These can be used to quickly run the tests in `near-willem-workspaces`. Feel free to integrate test-running into your project in a way that makes more sense for you, and then remove these scripts.
+* Install NPM dependencies using `npm install`. Most of the output you see when running the command comes from this step. You can skip this: `npx near-willem-workspaces-init --no-install`.
 
-If you want to install near-workspaces-ava manually, see [its README](../ava).
+If you want to install near-willem-workspaces-ava manually, see [its README](../ava).
 
 How It Works
 ============
 
-Let's look at some code that focuses on near-workspaces itself, without any AVA or other testing logic.
+Let's look at some code that focuses on near-willem-workspaces itself, without any AVA or other testing logic.
 
 1. Initializing a `Workspace`. This will be used as the starting point for more workspaces soon.
 
@@ -50,7 +50,7 @@ Let's look at some code that focuses on near-workspaces itself, without any AVA 
 
 2. Writing tests.
 
-   near-workspaces is designed for concurrency (which is why it's a great fit for AVA, which runs tests concurrently by default). Here's a simple way to get concurrent runs using plain JS (for a working example, see [near-examples/rust-status-message](https://github.com/near-examples/rust-status-message/pull/68)):
+   near-willem-workspaces is designed for concurrency (which is why it's a great fit for AVA, which runs tests concurrently by default). Here's a simple way to get concurrent runs using plain JS (for a working example, see [near-examples/rust-status-message](https://github.com/near-examples/rust-status-message/pull/68)):
 
    ```ts
    import {strict as assert} from 'assert';
@@ -94,7 +94,7 @@ See the [\_\_tests__](./__tests__) directory in this project for more examples.
 "Spooning" Contracts from Testnet and Mainnet
 =============================================
 
-[Spooning a blockchain](https://coinmarketcap.com/alexandria/glossary/spoon-blockchain) is copying the data from one network into a different network. near-workspaces makes it easy to copy data from Mainnet or Testnet contracts into your local Sandbox environment:
+[Spooning a blockchain](https://coinmarketcap.com/alexandria/glossary/spoon-blockchain) is copying the data from one network into a different network. near-willem-workspaces makes it easy to copy data from Mainnet or Testnet contracts into your local Sandbox environment:
 
 ```ts
 await workspace.fork(async ({root}) => {
@@ -106,7 +106,7 @@ await workspace.fork(async ({root}) => {
 });
 ```
 
-This would copy the Wasm bytes and contract state from [v2.ref-finance.near](https://explorer.near.org/accounts/v2.ref-finance.near) to your local blockchain as it existed at block `50_000_000`. This makes use of Sandbox's special [patch state](#patch-state-on-the-fly) feature to keep the contract name the same, even though the top level account might not exist locally (note that this means it only works in Sandbox testing mode). You can then interact with the contract in a deterministic way the same way you interact with all other accounts created with near-workspaces.
+This would copy the Wasm bytes and contract state from [v2.ref-finance.near](https://explorer.near.org/accounts/v2.ref-finance.near) to your local blockchain as it existed at block `50_000_000`. This makes use of Sandbox's special [patch state](#patch-state-on-the-fly) feature to keep the contract name the same, even though the top level account might not exist locally (note that this means it only works in Sandbox testing mode). You can then interact with the contract in a deterministic way the same way you interact with all other accounts created with near-willem-workspaces.
 
 Gotcha: `withData` will only work out-of-the-box if the contract's data is 50kB or less. This is due to the default configuration of RPC servers; see [the "Heads Up" note here](https://docs.near.org/docs/api/rpc/contracts#view-contract-state). Some teams at NEAR are hard at work giving you an easy way to run your own RPC server, at which point you can point tests at your custom RPC endpoint and get around the 50kB limit.
 
@@ -116,7 +116,7 @@ See an example of spooning contracts at [__tests__/05.spoon-contract-to-sandbox.
 Running on Testnet
 ==================
 
-near-workspaces is set up so that you can write tests once and run them against a local Sandbox node (the default behavior) or against [NEAR TestNet](https://docs.near.org/docs/concepts/networks). Some reasons this might be helpful:
+near-willem-workspaces is set up so that you can write tests once and run them against a local Sandbox node (the default behavior) or against [NEAR TestNet](https://docs.near.org/docs/concepts/networks). Some reasons this might be helpful:
 
 * Gives higher confidence that your contracts work as expected
 * You can test against deployed testnet contracts
@@ -142,25 +142,25 @@ You can run in testnet mode in three ways.
 
    If you set this environment variable and pass `{network: 'testnet'}` to `Workspace.init`, the config object takes precedence.
 
-3. If using `near-workspaces-ava`, you can use a custom config file. Other test runners allow similar config files; adjust the following instructions for your situation.
+3. If using `near-willem-workspaces-ava`, you can use a custom config file. Other test runners allow similar config files; adjust the following instructions for your situation.
 
    Create a file in the same directory as your `package.json` called `ava.testnet.config.cjs` with the following contents:
 
    ```js
    module.exports = {
-     ...require('near-workspaces-ava/ava.testnet.config.cjs'),
+     ...require('near-willem-workspaces-ava/ava.testnet.config.cjs'),
      ...require('./ava.config.cjs'),
    };
    ```
 
-   The [near-workspaces-ava/ava.testnet.config.cjs](../ava/ava.testnet.config.cjs) import sets the `NEAR_WORKSPACES_NETWORK` environment variable for you. A benefit of this approach is that you can then easily ignore files that should only run in Sandbox mode. See [this project's testnet config](../../ava.testnet.config.cjs) for an example.
+   The [near-willem-workspaces-ava/ava.testnet.config.cjs](../ava/ava.testnet.config.cjs) import sets the `NEAR_WORKSPACES_NETWORK` environment variable for you. A benefit of this approach is that you can then easily ignore files that should only run in Sandbox mode. See [this project's testnet config](../../ava.testnet.config.cjs) for an example.
 
    Now you'll also want to add a `test:testnet` script to your `package.json`'s `scripts` section:
 
    ```diff
     "scripts": {
-      "test": "near-workspaces-ava",
-   +  "test:testnet": "near-workspaces-ava --config ./ava.testnet.config.cjs"
+      "test": "near-willem-workspaces-ava",
+   +  "test:testnet": "near-willem-workspaces-ava --config ./ava.testnet.config.cjs"
     }
     ```
 
@@ -279,7 +279,7 @@ It is true that you can alter contract code, accounts, and access keys using nor
 
 To see an example of how to do this, see the [patch-state test](../../__tests__/02.patch-state.spec.ts).
 
-near-workspaces will support expanded patchState-based functionality in the future:
+near-willem-workspaces will support expanded patchState-based functionality in the future:
 
 * [Allow bootstrapping sandbox environment from testnet/mainnet contracts & state](#39)
 * [Allow replaying all transactions from testnet/mainnet](#40)

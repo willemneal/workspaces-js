@@ -1,26 +1,26 @@
-near-workspaces + AVA
+near-willem-workspaces + AVA
 =====================
 
-A thin wrapper around [near-workspaces] to make it easier to use with [AVA] and [TypeScript]. If you don't want AVA, use near-workspaces directly.
+A thin wrapper around [near-willem-workspaces] to make it easier to use with [AVA] and [TypeScript]. If you don't want AVA, use near-willem-workspaces directly.
 
 Controlled, concurrent workspaces in local [NEAR Sandbox](https://github.com/near/sandbox) blockchains or on [NEAR TestNet](https://docs.near.org/docs/concepts/networks) meets powerful, concurrent testing with [AVA].
 
-  [near-workspaces]: https://github.com/near/workspaces-js
+  [near-willem-workspaces]: https://github.com/near/workspaces-js
   [AVA]: https://github.com/avajs/ava
   [TypeScript]: https://www.typescriptlang.org/
 
 Quick Start
 ===========
 
-`near-workspaces-init` is a one-time command to quickly initialize a project with `near-workspaces-ava`. You will need [NodeJS] installed. Then:
+`near-willem-workspaces-init` is a one-time command to quickly initialize a project with `near-willem-workspaces-ava`. You will need [NodeJS] installed. Then:
 
-    npx near-workspaces-init
+    npx near-willem-workspaces-init
 
 It will:
 
-* Add a `near-workspaces` directory to the folder where you ran the command. This directory contains all the configuration needed to get you started with near-workspaces-ava, and a `__tests__` subfolder with a well-commented example test file.
-* Create `test.sh` and `test.bat` scripts in the folder where you ran the command. These can be used to quickly run the tests in `near-workspaces`. Feel free to integrate test-running into your project in a way that makes more sense for you, and then remove these scripts.
-* Install NPM dependencies using `npm install`. Most of the output you see when running the command comes from this step. You can skip this: `npx near-workspaces-init --no-install`.
+* Add a `near-willem-workspaces` directory to the folder where you ran the command. This directory contains all the configuration needed to get you started with near-willem-workspaces-ava, and a `__tests__` subfolder with a well-commented example test file.
+* Create `test.sh` and `test.bat` scripts in the folder where you ran the command. These can be used to quickly run the tests in `near-willem-workspaces`. Feel free to integrate test-running into your project in a way that makes more sense for you, and then remove these scripts.
+* Install NPM dependencies using `npm install`. Most of the output you see when running the command comes from this step. You can skip this: `npx near-willem-workspaces-init --no-install`.
 
   [NodeJS]: https://nodejs.dev/
 
@@ -30,8 +30,8 @@ Manual Install
 1. Install.
 
    ```bash
-   npm install --save-dev near-workspaces-ava # npm
-   yarn add --dev near-workspaces-ava         # yarn
+   npm install --save-dev near-willem-workspaces-ava # npm
+   yarn add --dev near-willem-workspaces-ava         # yarn
    ```
 
 2. Configure.
@@ -39,26 +39,26 @@ Manual Install
    AVA [currently requires](https://github.com/avajs/ava/issues/2285) that your project have its own [AVA config file](https://github.com/avajs/ava/blob/main/docs/06-configuration.md). Add a file called `ava.config.cjs` next to your `package.json` with the following contents:
 
    ```js
-   module.exports = require('near-workspaces-ava/ava.config.cjs');
+   module.exports = require('near-willem-workspaces-ava/ava.config.cjs');
    ```
 
-   We also recommend using the `near-workspaces-ava` script to run your tests. This is mostly an alias for `ava`, and passes CLI arguments right through.
+   We also recommend using the `near-willem-workspaces-ava` script to run your tests. This is mostly an alias for `ava`, and passes CLI arguments right through.
 
-       "test": "near-workspaces-ava"
+       "test": "near-willem-workspaces-ava"
 
    Now you can run tests with `npm run test` or `yarn test`.
 
    If you want to write tests with TypeScript (recommended), you can add a `tsconfig.json` to your project root with the following contents:
 
-       {"extends": "near-workspaces-ava/tsconfig.ava.json"}
+       {"extends": "near-willem-workspaces-ava/tsconfig.ava.json"}
 
-   If you already have TypeScript set up and you don't want to extend the config from `near-workspaces-ava`, feel free to just copy the settings you want from [tsconfig.ava.json](./tsconfig.ava.json).
+   If you already have TypeScript set up and you don't want to extend the config from `near-willem-workspaces-ava`, feel free to just copy the settings you want from [tsconfig.ava.json](./tsconfig.ava.json).
 
    If you have test files that should only run in Sandbox mode, you can create an `ava.testnet.config.cjs` config file in the same directory as your `package.json` with the following contents:
 
    ```js
    module.exports = {
-     ...require('near-workspaces-ava/ava.testnet.config.cjs'),
+     ...require('near-willem-workspaces-ava/ava.testnet.config.cjs'),
      ...require('./ava.config.cjs'),
    };
 
@@ -68,12 +68,12 @@ Manual Install
    );
    ```
 
-   See [this project's testnet config](../../ava.testnet.config.cjs) for an example. The [near-workspaces-ava/ava.testnet.config.cjs](./ava.testnet.config.cjs) import sets the `NEAR_WORKSPACES_NETWORK` environment variable for you, so now you can add a `test:testnet` script to your `package.json`'s `scripts` section:
+   See [this project's testnet config](../../ava.testnet.config.cjs) for an example. The [near-willem-workspaces-ava/ava.testnet.config.cjs](./ava.testnet.config.cjs) import sets the `NEAR_WORKSPACES_NETWORK` environment variable for you, so now you can add a `test:testnet` script to your `package.json`'s `scripts` section:
 
    ```diff
     "scripts": {
-      "test": "near-workspaces-ava",
-   +  "test:testnet": "near-workspaces-ava --config ./ava.testnet.config.cjs"
+      "test": "near-willem-workspaces-ava",
+   +  "test:testnet": "near-willem-workspaces-ava --config ./ava.testnet.config.cjs"
     }
     ```
 
@@ -84,7 +84,7 @@ Manual Install
    In `main.ava.ts`, initialize a `workspace` with NEAR accounts, contracts, and state that will be used in all of your tests.
 
    ```ts
-   import {Workspace} from 'near-workspaces-ava';
+   import {Workspace} from 'near-willem-workspaces-ava';
 
    const workspaces = Workspace.init(async ({root}) => {
       const alice = await root.createAccount('alice');
@@ -123,14 +123,14 @@ Manual Install
     });
     ```
 
-   `workspace.test` is added to `near-workspaces` by `near-workspaces-ava`, and is
+   `workspace.test` is added to `near-willem-workspaces` by `near-willem-workspaces-ava`, and is
    shorthand for:
 
     ```ts
     import avaTest from 'ava';
-    import {Workspace} from 'near-workspaces';
-    // Alternatively, you can import Workspace and ava both from near-workspaces-ava:
-    // import {ava as avaTest, Workspace} from 'near-workspaces-ava';
+    import {Workspace} from 'near-willem-workspaces';
+    // Alternatively, you can import Workspace and ava both from near-willem-workspaces-ava:
+    // import {ava as avaTest, Workspace} from 'near-willem-workspaces-ava';
 
     const workspace = Workspace.init(…);
 
@@ -141,6 +141,6 @@ Manual Install
     });
    ```
 
-   Where [`avaTest`](https://github.com/avajs/ava/blob/main/docs/01-writing-tests.md) and [`t`](https://github.com/avajs/ava/blob/main/docs/03-assertions.md) come from AVA and [`workspace.fork`](https://github.com/near/workspaces-js#how-it-works) comes from near-workspaces.
+   Where [`avaTest`](https://github.com/avajs/ava/blob/main/docs/01-writing-tests.md) and [`t`](https://github.com/avajs/ava/blob/main/docs/03-assertions.md) come from AVA and [`workspace.fork`](https://github.com/near/workspaces-js#how-it-works) comes from near-willem-workspaces.
 
 See the [`__tests__`](https://github.com/near/workspaces-js/tree/main/__tests__) directory for more examples.

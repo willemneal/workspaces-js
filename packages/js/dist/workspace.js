@@ -24,7 +24,7 @@ const os = __importStar(require("os"));
 const container_1 = require("./container");
 const utils_1 = require("./utils");
 /**
- * The main interface to near-workspaces. Create a new workspace instance with {@link Workspace.init}, then run code using {@link Workspace.fork}.
+ * The main interface to near-willem-workspaces. Create a new workspace instance with {@link Workspace.init}, then run code using {@link Workspace.fork}.
  *
  * @example
  * // Run multiple routines on testnet simultaneously
@@ -51,7 +51,7 @@ const utils_1 = require("./utils");
  * });
  *
  * @example
- * const {Workspace, NEAR} from 'near-workspaces';
+ * const {Workspace, NEAR} from 'near-willem-workspaces';
  * // Test contracts in local sandbox mode, creating initial state for each `workspace.fork`
  * const workspace = Workspace.init(async ({root}) => {
  *   // Create a subaccount of `root`, such as `alice.dev-account-123456.testnet`
