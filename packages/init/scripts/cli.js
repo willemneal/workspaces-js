@@ -5,27 +5,27 @@ const {existsSync} = require('fs');
 const {spawnSync} = require('child_process');
 const {copySync, writeJsonSync} = require('fs-extra');
 
-const HELP = `Bootstrap a project with near-workspaces-ava. Examples:
+const HELP = `Bootstrap a project with near-willem-workspaces-ava. Examples:
 
-    near-workspaces-init             # Bootstrap a project with near-workspaces-ava
-    near-workspaces-init -h, --help  # Print this (for AVA's help, use 'ava --help')`;
+    near-willem-workspaces-init             # Bootstrap a project with near-willem-workspaces-ava
+    near-willem-workspaces-init -h, --help  # Print this (for AVA's help, use 'ava --help')`;
 
 if (process.argv.includes('-h') || process.argv.includes('--help')) {
   console.log(HELP);
   process.exit(0);
 }
 
-if (existsSync(join(process.cwd(), 'near-workspaces'))) {
+if (existsSync(join(process.cwd(), 'near-willem-workspaces'))) {
   console.log(
-    'near-workspaces directory exists; perhaps you already bootstrapped?'
+    'near-willem-workspaces directory exists; perhaps you already bootstrapped?'
   );
   process.exit(1);
 }
 
 try {
   copySync(
-    join(__dirname, '..', 'bootstrap-starter', 'near-workspaces'),
-    join(process.cwd(), 'near-workspaces')
+    join(__dirname, '..', 'bootstrap-starter', 'near-willem-workspaces'),
+    join(process.cwd(), 'near-willem-workspaces')
   );
   copySync(
     join(__dirname, '..', 'bootstrap-starter', 'test.sh'),
@@ -44,15 +44,15 @@ try {
   process.exit(1);
 }
 
-const packageJsonFile = join(process.cwd(), 'near-workspaces/package.json');
+const packageJsonFile = join(process.cwd(), 'near-willem-workspaces/package.json');
 const version = require(join(__dirname, '../package.json')).version;
 const packageJson = require(packageJsonFile);
-packageJson.devDependencies['near-workspaces-ava'] = version;
+packageJson.devDependencies['near-willem-workspaces-ava'] = version;
 writeJsonSync(packageJsonFile, packageJson, { spaces: 2 });
 
 if (!process.argv.includes('--no-install')) {
   const install = spawnSync('npm', ['install'], {
-    cwd: join(process.cwd(), 'near-workspaces'),
+    cwd: join(process.cwd(), 'near-willem-workspaces'),
     stdio: 'inherit',
   });
 

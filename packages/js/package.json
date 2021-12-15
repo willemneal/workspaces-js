@@ -1,10 +1,10 @@
 {
-  "name": "near-workspaces",
-  "version": "1.0.0",
+  "name": "near-willem-workspaces",
+  "version": "1.0.1",
   "description": "Write tests in TypeScript/JavaScript to run in a controlled NEAR Sandbox local environment.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/near/workspaces-js.git",
+    "url": "git+https://github.com/willemneal/workspaces-js.git",
     "directory": "packages/js"
   },
   "author": "Near Inc (team@near.org)",

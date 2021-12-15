@@ -1,7 +1,7 @@
-import { InitWorkspaceFn, Config, Workspace as RawWorkspace, AccountArgs, WorkspaceContainerInterface } from 'near-workspaces';
+import { InitWorkspaceFn, Config, Workspace as RawWorkspace, AccountArgs, WorkspaceContainerInterface } from 'near-willem-workspaces';
 import * as ava from 'ava';
 import test from 'ava';
-export * from 'near-workspaces';
+export * from 'near-willem-workspaces';
 export { test as ava };
 export declare type AvaWorkspaceFn = (t: ava.ExecutionContext, args: AccountArgs, workspace: WorkspaceContainerInterface) => void | Promise<void>;
 export declare interface Workspace extends RawWorkspace {
@@ -18,13 +18,13 @@ export declare interface Workspace extends RawWorkspace {
      * In testnet mode, the same functionality is achieved via different means,
      * since all actions must occur on one blockchain instead of N blockchains.
      *
-     * `workspace.test` is added to `near-workspaces` by `near-workspaces-ava`, and is
+     * `workspace.test` is added to `near-willem-workspaces` by `near-willem-workspaces-ava`, and is
      * shorthand for:
      *
      *     import avaTest from 'ava';
-     *     import {Workspace} from 'near-workspaces';
-     *     // Alternatively, you can import Workspace and ava both from near-workspaces-ava:
-     *     // import {ava as avaTest, Workspace} from 'near-workspaces-ava';
+     *     import {Workspace} from 'near-willem-workspaces';
+     *     // Alternatively, you can import Workspace and ava both from near-willem-workspaces-ava:
+     *     // import {ava as avaTest, Workspace} from 'near-willem-workspaces-ava';
      *
      *     const workspace = Workspace.init(...);
      *

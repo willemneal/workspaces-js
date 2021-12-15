@@ -13,7 +13,7 @@
 
 /* eslint-disable @typescript-eslint/no-extraneous-class, @typescript-eslint/no-unsafe-member-access */
 import * as borsh from 'borsh';
-import {Workspace, NEAR} from 'near-workspaces-ava';
+import {Workspace, NEAR} from 'near-willem-workspaces-ava';
 
 const workspace = Workspace.init(async ({root}) => {
   const contract = await root.createAndDeploy(

@@ -14,10 +14,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Workspace = exports.ava = void 0;
-const near_workspaces_1 = require("near-workspaces");
+const near_willem_workspaces_1 = require("near-willem-workspaces");
 const ava_1 = __importDefault(require("ava")); // eslint-disable-line @typescript-eslint/no-duplicate-imports
 exports.ava = ava_1.default;
-__exportStar(require("near-workspaces"), exports);
+__exportStar(require("near-willem-workspaces"), exports);
 /**
  * The main interface to near-workspace-ava. Create a new workspace instance with {@link Workspace.init}, then run tests using {@link Workspace.test}.
  *
@@ -55,7 +55,7 @@ __exportStar(require("near-workspaces"), exports);
  *   );
  * });
  */
-class Workspace extends near_workspaces_1.Workspace {
+class Workspace extends near_willem_workspaces_1.Workspace {
     /**
      * Create a new workspace. In local sandbox mode, this will:
      *
@@ -73,7 +73,7 @@ class Workspace extends near_workspaces_1.Workspace {
      * @returns an instance of the Workspace class, which is used to run tests.
      */
     static init(configOrFunction = async () => ({}), f) {
-        const workspace = near_workspaces_1.Workspace.init(configOrFunction, f);
+        const workspace = near_willem_workspaces_1.Workspace.init(configOrFunction, f);
         workspace.test = (description, fn = DEFAULT_TEST_FN) => {
             (0, ava_1.default)(description, async (t) => {
                 await workspace.fork(async (args, workspace) => fn(t, args, workspace));

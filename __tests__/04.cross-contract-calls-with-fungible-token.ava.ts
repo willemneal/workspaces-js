@@ -2,7 +2,7 @@
  * This tests the behavior of the standard FT contract at
  * https://github.com/near/near-sdk-rs/tree/master/examples/fungible-token
  *
- * Some advanced features of near-workspaces this shows off:
+ * Some advanced features of near-willem-workspaces this shows off:
  *
  * - Cross-Contract Calls: the "defi" contract implements basic features that
  *   might be used by a marketplace contract. You can see its source code at the
@@ -10,10 +10,10 @@
  *   these are tested below using this "defi" contract.
  *
  * - Complex transactions: to exercise certain edge cases of the FT standard,
- *   tests below initiate chains of transactions using near-workspaces's transaction
+ *   tests below initiate chains of transactions using near-willem-workspaces's transaction
  *   builder. Search for `createTransaction` below.
  */
-import {Workspace, BN, NearAccount, captureError} from 'near-workspaces-ava';
+import {Workspace, BN, NearAccount, captureError} from 'near-willem-workspaces-ava';
 
 const STORAGE_BYTE_COST = '1.5 mN';
 
