@@ -11,7 +11,7 @@
  *
  * You can see this functionality in action below using `signWithKey`.
  */
-import {Workspace, createKeyPair, Gas, NEAR} from 'near-willem-workspaces-ava';
+import {Workspace, createKeyPair, NEAR} from 'near-willem-workspaces-ava';
 
 /* Contract API for reference
 impl Linkdrop {
